@@ -170,13 +170,13 @@ const diaDaSemana = new Date().getDay();
 
 // Função para definir a receita e o vídeo do dia
 function definirConteudoDoDia() {
-    document.getElementById("video-source").src = videos[1];
+    document.getElementById("video-source").src = videos[diaDaSemana];
     document.getElementById("video").querySelector("video").load(); // Carrega o vídeo correto
 }
 
 // Definir receita e vídeo com base no dia da semana
 function definirReceitaDoDia() {
-    const receitaDoDia = receitas[1];
+    const receitaDoDia = receitas[diaDaSemana];
 
     // Define o vídeo e o texto da receita
     document.getElementById("recipe-video").src = receitaDoDia.video;
@@ -201,9 +201,52 @@ function calcularIngestaoAgua() {
     }
 }
 
+let currentDayIndex = new Date().getDay(); // Começa no dia atual
+
+// Função para atualizar a receita e o vídeo com base no dia selecionado
+function atualizarConteudoDoDia() {
+    // Atualiza a receita
+    const receitaDoDia = receitas[currentDayIndex];
+    const videoElement = document.getElementById("recipe-video");
+    const videoSourceElement = videoElement.querySelector("source");
+
+    // Atualiza o vídeo da receita
+    videoSourceElement.src = receitaDoDia.video;
+    videoElement.load(); // Carrega o vídeo da receita
+
+    // Atualiza o título e a descrição da receita
+    document.getElementById("recipe-title").textContent = receitaDoDia.title;
+    document.getElementById("recipe-description").textContent = receitaDoDia.description;
+
+    // Atualiza o vídeo do exercício
+    const videoExercicioElement = document.getElementById("video");
+    const videoExercicioSourceElement = videoExercicioElement.querySelector("source");
+    videoExercicioSourceElement.src = videos[currentDayIndex]; // Atualiza o vídeo do exercício
+    videoExercicioElement.load(); // Carrega o vídeo de exercício
+
+    const diasDaSemana = ["Domingo", "Segunda-feira", "Terça-feira", "Quarta-feira", "Quinta-feira", "Sexta-feira", "Sábado"];
+    document.getElementById("day-message").textContent = `Treino diário de ${diasDaSemana[currentDayIndex]}`;
+}
+
+// Funções para navegar entre os dias da semana
+function diaAnterior() {
+    currentDayIndex = (currentDayIndex - 1 + receitas.length) % receitas.length;
+    atualizarConteudoDoDia();
+}
+
+function proximoDia() {
+    currentDayIndex = (currentDayIndex + 1) % receitas.length;
+    atualizarConteudoDoDia();
+}
+
+// Event listeners para os botões
+document.getElementById("prev-day").addEventListener("click", diaAnterior);
+document.getElementById("next-day").addEventListener("click", proximoDia);
+
 
 // Chama as funções ao carregar a página
 window.onload = function() {
+    atualizarConteudoDoDia();
     calcularIngestaoAgua();
     definirConteudoDoDia();
     definirReceitaDoDia();

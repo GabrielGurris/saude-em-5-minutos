@@ -16,14 +16,11 @@
             <p>Adote hábitos saudáveis mesmo com pouco tempo!</p>
         </header>
         
-        <div id="video">
-            <h2>Exercício Diário</h2>
-            <video class="rounded-video"  controls>
-                <source id="video-source" src="" type="video/mp4">
-                Seu navegador não suporta o elemento de vídeo.
-            </video>
-        </div>
-        
+        <h2>Exercício Diário</h2>
+        <video class="rounded-video" id="video" controls>
+            <source id="video-source" src="" type="video/mp4">
+            Seu navegador não suporta o elemento de vídeo.
+        </video>
         
         <h2>Receita do Dia</h2>
         <div class="recipe-section">
@@ -43,6 +40,12 @@
         <button onclick="calcularIngestaoAgua()">Calcular</button>
         <p id="agua-intake" class="agua-text"></p>
 
+        
+        <div class="day-controls">
+            <h3 id="day-message"></h3>
+            <button id="prev-day">Dia Anterior</button>
+            <button id="next-day">Próximo Dia</button>
+        </div>
 
         <footer>
             <p>&copy; 2024 Saúde em 5 Minutos</p>
