@@ -1,0 +1,165 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to top, #CD853F, 	#A0522D);
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2, h3, p {
+    font-family: 'Merriweather', serif;
+}
+
+
+.container {
+    max-width: 700px;
+    margin: 50px auto;
+    padding: 20px;
+    background: #F5DEB3;
+    border-radius: 15px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.recipe-section {
+    display: flex; /* Usar flexbox para controlar a disposição */
+    flex-direction: column; /* Alinha os itens na coluna */
+    align-items: center; /* Centraliza os itens horizontalmente */
+    margin: 5px 0; /* Margens superiores e inferiores */
+    gap: 10px;
+}
+
+@media (min-width: 768px) {
+    .recipe-section {
+        flex-direction: row; /* Muda para linha em telas maiores */
+    }
+
+    #recipe-video {
+        margin-right: 20px; /* Espaço entre o vídeo e o texto */
+    }
+}
+
+/* Estilo para vídeo com bordas arredondadas */
+.rounded-video {
+    border-radius: 15px 25px; /* Define o arredondamento das bordas */
+    overflow: hidden; /* Garante que o vídeo não ultrapasse as bordas arredondadas */
+    box-shadow: 10px 10px 8px rgba(0, 0, 0, 0.2); /* Opcional: adiciona sombra */
+}
+
+#recipe-video {
+    margin-top: 30px;
+    width: 300px;
+    height: 400px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+#recipe-text {
+    flex: 1;
+    border-radius: 10px;
+    background-color: #F5F5DC;
+    border-left: 5px solid #A0522D;
+    transition: background-color 0.3s, transform 0.2s;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding-left: 10px;
+}
+
+#recipe-text:hover, #recipé-text:hover {
+    background-color: #f1f1f1;
+    transform: translateY(-2px);
+}
+
+#recipe-title {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    color: #8B4513;
+}
+
+#recipe-description {
+    white-space: pre-wrap; /* Mantém quebras de linha e espaços */
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin-top: 10px;
+    padding-right: 10px;
+    text-align: justify;
+}
+
+/* Estilo para o campo de entrada do peso */
+#peso {
+    width: 100%; /* Largura total */
+    max-width: 300px; /* Limite de largura máxima */
+    padding: 10px; /* Espaçamento interno */
+    margin: 10px 0; /* Espaçamento acima e abaixo */
+    font-size: 1rem; /* Tamanho da fonte */
+    border: 2px solid #A0522D; /* Borda verde */
+    border-radius: 8px; /* Bordas arredondadas */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra leve */
+    background-color: #F5F5DC;
+}
+
+header {
+    background-color: #A0522D;
+    color: #F5F5DC;
+    padding: 20px;
+    border-radius: 15px 15px 0 0;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.3);
+}
+
+h1 {
+    font-size: 2.5em;
+    margin: 0;
+}
+
+h2 {
+    margin-top: 30px;
+    color: #A0522D;
+    font-size: 1.8em;
+}
+
+button {
+    background: linear-gradient(135deg, #FF5722, #E64A19);
+    color: #F5F5DC;
+    padding: 15px 25px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s, transform 0.2s;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    margin-top: 30px;
+}
+
+button:hover {
+    background: linear-gradient(135deg, #E64A19, #FF5722);
+    transform: translateY(-3px);
+}
+
+.receita-text, .agua-text {
+    font-size: 18px;
+    margin: 20px 0;
+    padding: 15px;
+    border-radius: 10px;
+    background-color: #F5F5DC;
+    border-left: 5px solid #A0522D;
+    transition: background-color 0.3s, transform 0.2s;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.receita-text:hover, .agua-text:hover {
+    background-color: #f1f1f1;
+    transform: translateY(-2px);
+}
+
+footer {
+    margin-top: 30px;
+    font-size: 14px;
+    color: #777;
+    border-top: 1px solid #e0e0e0;
+    padding-top: 15px;
+}
+
+

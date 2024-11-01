@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saúde em 5 Minutos</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Saúde em 5 Minutos 🏋️‍♀️</h1>
+            <p>Adote hábitos saudáveis mesmo com pouco tempo!</p>
+        </header>
+        
+        <div id="video">
+            <h2>Exercício Diário</h2>
+            <video class="rounded-video" width="500" height="300" controls>
+                <source id="video-source" src="" type="video/mp4">
+                Seu navegador não suporta o elemento de vídeo.
+            </video>
+        </div>
+        
+        
+        <h2>Receita do Dia</h2>
+        <div class="recipe-section">
+            <video id="recipe-video" controls>
+                <source src="" type="video/mp4">
+                Seu navegador não suporta o elemento de vídeo.
+            </video>
+            <div id="recipe-text">
+                <h3 id="recipe-title">Título da Receita</h3>
+                <p id="recipe-description">Aqui será exibida a descrição detalhada da receita e o modo de preparo.</p>
+            </div>
+        </div>
+
+        <h2>Ingestão de Água</h2>
+        <p>Digite seu peso (kg) para calcular a quantidade de água que deve beber:</p>
+        <input type="number" id="peso" placeholder="Digite seu peso em kg">
+        <button onclick="calcularIngestaoAgua()">Calcular</button>
+        <p id="agua-intake" class="agua-text"></p>
+
+
+        <footer>
+            <p>&copy; 2024 Saúde em 5 Minutos</p>
+        </footer>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
